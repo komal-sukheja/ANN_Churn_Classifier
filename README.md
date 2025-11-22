@@ -1,39 +1,50 @@
 # 📉 Customer Churn Prediction App
 
-A machine learning web app that predicts customer churn using an Artificial Neural Network (ANN). Built with TensorFlow and deployed using Streamlit.
+A complete end-to-end machine learning project that predicts **customer churn** using an **Artificial Neural Network (ANN)**.  
+The model is trained using TensorFlow/Keras and deployed as an interactive web application using **Streamlit**.
 
 ---
 
-##  Overview
-This project analyzes customer demographic and financial information to estimate the probability of churn.  
-The app allows users to input customer details and get real-time churn predictions.
+## 🚀 Project Overview
+This project aims to predict whether a customer is likely to churn based on demographic and financial attributes such as age, credit score, balance, salary, activity status, and more.
+
+The solution includes:
+- Full preprocessing and feature engineering  
+- ANN model training  
+- Saving transformers + model  
+- A deployed Streamlit web app for real-time predictions  
 
 ---
 
-## 🛠 Tech Stack
-- Python  
-- TensorFlow / Keras  
-- pandas, numpy  
-- scikit-learn  
-- Streamlit  
-- matplotlib  
-- pickle  
+## 🧠 Model Details
+**Architecture**
+- Dense(64, relu)  
+- Dense(32, relu)  
+- Dense(1, sigmoid)
+
+**Training Specs**
+- Loss: Binary Crossentropy  
+- Optimizer: Adam  
+- Train/Test Split: 80/20  
+- Preprocessing:
+  - Label Encoding → Gender  
+  - One-Hot Encoding → Geography  
+  - Standard Scaling → Numerical features  
+
 
 ---
 
-## 📂 Project Structure
-experiments.ipynb # Model training
-prediction.ipynb # Sample predictions
-app.py # Streamlit app
-model.h5 # Trained ANN model
-label_encoder_gender.pkl
-OHE_geography.pkl
-scaler.pkl
-requirements.txt
+## 🌐 Streamlit App (UI Features)
+- User-friendly form for entering all customer details  
+- Real-time churn probability output  
+- Color-coded result (Likely / Not Likely to Churn)  
+- Automatically loads saved model + encoders + scaler  
 
-## 🌐 Features
+---
 
-- User-friendly UI
-- Real-time churn probability
-- Preprocessing + model inference pipeline
-- ANN-based prediction
+## ▶️ How to Run Locally
+
+### 1️⃣ Clone the repository
+```bash
+git clone <your-repo-link>
+cd <project-folder>
