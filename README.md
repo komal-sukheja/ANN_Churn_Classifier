@@ -1,50 +1,110 @@
-# 📉 Customer Churn Prediction App
+# 📉 Customer Churn Prediction App (ANN)
 
-A complete end-to-end machine learning project that predicts **customer churn** using an **Artificial Neural Network (ANN)**.  
-The model is trained using TensorFlow/Keras and deployed as an interactive web application using **Streamlit**.
+An end-to-end machine learning project that predicts **customer churn** using an **Artificial Neural Network (ANN)**.  
+The model is built with TensorFlow/Keras and deployed using **Streamlit** for real-time predictions.
 
----
-
-## 🚀 Project Overview
-This project aims to predict whether a customer is likely to churn based on demographic and financial attributes such as age, credit score, balance, salary, activity status, and more.
-
-The solution includes:
-- Full preprocessing and feature engineering  
-- ANN model training  
-- Saving transformers + model  
-- A deployed Streamlit web app for real-time predictions  
+🔗 **Live Streamlit App:** https://annchurnclassifier-hszpd53e63wf.streamlit.app/  
+🔗 **GitHub Repository:** https://github.com/komal-sukheja/ANN_Churn_Classifier  
 
 ---
 
-## 🧠 Model Details
-**Architecture**
-- Dense(64, relu)  
-- Dense(32, relu)  
-- Dense(1, sigmoid)
+##  Project Overview
 
-**Training Specs**
-- Loss: Binary Crossentropy  
-- Optimizer: Adam  
-- Train/Test Split: 80/20  
-- Preprocessing:
-  - Label Encoding → Gender  
-  - One-Hot Encoding → Geography  
-  - Standard Scaling → Numerical features  
+Customer churn is a major challenge for subscription-based and service-based businesses.  
+This project predicts whether a customer is likely to churn based on demographic and financial attributes such as:
 
+- Age  
+- Credit Score  
+- Gender  
+- Geography  
+- Balance  
+- Salary  
+- Tenure  
+- Number of Products  
+- Activity Status  
+- Credit Card Status  
+
+The pipeline includes:
+- Data preprocessing & feature engineering  
+- Building an ANN classifier  
+- Saving model & preprocessing objects  
+- Deploying a user-friendly Streamlit web application  
 
 ---
 
-## 🌐 Streamlit App (UI Features)
-- User-friendly form for entering all customer details  
-- Real-time churn probability output  
-- Color-coded result (Likely / Not Likely to Churn)  
-- Automatically loads saved model + encoders + scaler  
+##  Model Architecture
+
+The ANN was designed and trained using TensorFlow/Keras.
+
+**Layers**
+- Dense(64, activation='relu')  
+- Dense(32, activation='relu')  
+- Dense(1, activation='sigmoid')  
+
+**Training**
+- **Loss:** Binary Crossentropy  
+- **Optimizer:** Adam  
+- **Train/Test Split:** 80/20  
+- **Metrics:** Accuracy  
+
+**Preprocessing**
+- Label Encoding → Gender  
+- One-Hot Encoding → Geography  
+- Standard Scaling → Numerical columns  
+
+Saved artifacts:
+- `model.h5`  
+- `label_encoder_gender.pkl`  
+- `OHE_geography.pkl`  
+- `scaler.pkl`  
+
+---
+
+##  Tech Stack
+
+**Languages & Frameworks**
+- Python  
+- TensorFlow / Keras  
+
+**Libraries**
+- pandas  
+- numpy  
+- scikit-learn  
+- matplotlib  
+- pickle  
+
+**Deployment**
+- Streamlit  
+
+---
+
+## 📈 Output (Model Prediction)
+
+The model returns a churn probability between **0 and 1**.
+
+Prediction logic:
+- **> 0.5** → ❌ Customer is **likely to churn**  
+- **≤ 0.5** → ✅ Customer is **not likely to churn**
+
+--- 
+
+## 🌐 Streamlit Web App
+
+The deployed app provides:
+
+-  Form-based input for all customer attributes  
+-  Real-time churn prediction  
+-  Probability score  
+-  Color-coded results (Likely / Not Likely to Churn)  
+-  Automatic loading of saved model & preprocessing pipeline  
+
+👉 **Try the App:** https://annchurnclassifier-hszpd53e63wf.streamlit.app/
 
 ---
 
 ## ▶️ How to Run Locally
 
-### 1️⃣ Clone the repository
+### 1️⃣ Clone the Repository
 ```bash
-git clone <your-repo-link>
-cd <project-folder>
+git clone https://github.com/komal-sukheja/ANN_Churn_Classifier
+cd ANN_Churn_Classifier
